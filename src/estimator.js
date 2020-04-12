@@ -54,11 +54,11 @@ const compute = (
   impactData.dollarsInFlight = dollarsInFlight;
   severeImpactData.dollarsInFlight = dollarsInFlight;
 
-  const allCalc = [];
-  allCalc.push(impactData);
-  allCalc.push(severeImpactData);
+  const output = [];
+  output.push(impactData);
+  output.push(severeImpactData);
 
-  return allCalc;
+  return output;
 };
 
 const covid19ImpactEstimator = (data) => {

@@ -30,7 +30,8 @@ const compute = (
   impactData.infectionsByRequestedTime = infectionsByRequestedTime;
   severeImpactData.infectionsByRequestedTime = infectionsByRequestedTime;
 
-  const severeCasesByRequestedTime = Math.trunc((15 / 100) * infectionsByRequestedTime * period); // Both
+  const severeCasesByRequestedTime = Math.trunc((15 / 100)
+  * infectionsByRequestedTime * period); // Both
   impactData.severeCasesByRequestedTime = severeCasesByRequestedTime;
   severeImpactData.severeCasesByRequestedTime = severeCasesByRequestedTime;
 
@@ -40,7 +41,8 @@ const compute = (
   impactData.hospitalBedsByRequestedTime = hospitalBedsByRequestedTime;
   severeImpactData.hospitalBedsByRequestedTime = hospitalBedsByRequestedTime;
 
-  const casesForICUByRequestedTime = Math.trunc((5 / 100) * infectionsByRequestedTime * period); // Both
+  const casesForICUByRequestedTime = Math.trunc((5 / 100)
+  * infectionsByRequestedTime * period); // Both
   impactData.casesForICUByRequestedTime = casesForICUByRequestedTime;
   severeImpactData.casesForICUByRequestedTime = casesForICUByRequestedTime;
 

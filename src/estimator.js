@@ -24,7 +24,7 @@ const compute = (
   impactData.currentlyInfected = currentlyInfected;
 
   const severeImpact = Math.trunc(reportedCases * 50 * period); // Severe
-  severeImpact.currentlyInfected = severeImpact;
+  severeImpactData.currentlyInfected = severeImpact;
 
   const infectionsByRequestedTime = Math.trunc(currentlyInfected * 512); // Both
   impactData.infectionsByRequestedTime = infectionsByRequestedTime;

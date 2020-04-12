@@ -35,7 +35,8 @@ const compute = (
   severeImpactData.severeCasesByRequestedTime = severeCasesByRequestedTime;
 
   const averageOccupiedBeds = (65 / 100) * totalHospitalBeds; // Mine calc
-  const hospitalBedsByRequestedTime = Math.trunc(totalHospitalBeds - (severeCasesByRequestedTime + averageOccupiedBeds)); // Both
+  const hospitalBedsByRequestedTime = Math.trunc(totalHospitalBeds
+    - (severeCasesByRequestedTime + averageOccupiedBeds)); // Both
   impactData.hospitalBedsByRequestedTime = hospitalBedsByRequestedTime;
   severeImpactData.hospitalBedsByRequestedTime = hospitalBedsByRequestedTime;
 
@@ -43,11 +44,13 @@ const compute = (
   impactData.casesForICUByRequestedTime = casesForICUByRequestedTime;
   severeImpactData.casesForICUByRequestedTime = casesForICUByRequestedTime;
 
-  const casesForVentilatorsByRequestedTime = Math.trunc((2 / 100) * infectionsByRequestedTime); // Both
+  const casesForVentilatorsByRequestedTime = Math.trunc((2 / 100)
+  * infectionsByRequestedTime); // Both
   impactData.casesForVentilatorsByRequestedTime = casesForVentilatorsByRequestedTime;
   severeImpactData.casesForVentilatorsByRequestedTime = casesForVentilatorsByRequestedTime;
 
-  const dollarsInFlight = Math.trunc((infectionsByRequestedTime * avgDailyIncomePopulation * avgDailyIncomeInUSD) / period); // Both
+  const dollarsInFlight = Math.trunc((infectionsByRequestedTime
+    * avgDailyIncomePopulation * avgDailyIncomeInUSD) / period); // Both
   impactData.dollarsInFlight = dollarsInFlight;
   severeImpactData.dollarsInFlight = dollarsInFlight;
 

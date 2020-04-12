@@ -26,31 +26,31 @@ const compute = (
   const severeImpact = Math.trunc(reportedCases * 50 * period); // Severe
   severeImpactData.currentlyInfected = severeImpact;
 
-  const infectionsByRequestedTime = Math.trunc(currentlyInfected * 512); // Both
+  const infectionsByRequestedTime = Math.trunc(currentlyInfected * 512 * period); // Both
   impactData.infectionsByRequestedTime = infectionsByRequestedTime;
   severeImpactData.infectionsByRequestedTime = infectionsByRequestedTime;
 
-  const severeCasesByRequestedTime = Math.trunc((15 / 100) * infectionsByRequestedTime); // Both
+  const severeCasesByRequestedTime = Math.trunc((15 / 100) * infectionsByRequestedTime * period); // Both
   impactData.severeCasesByRequestedTime = severeCasesByRequestedTime;
   severeImpactData.severeCasesByRequestedTime = severeCasesByRequestedTime;
 
   const averageOccupiedBeds = (65 / 100) * totalHospitalBeds; // Mine calc
   const hospitalBedsByRequestedTime = Math.trunc(totalHospitalBeds
-    - (severeCasesByRequestedTime + averageOccupiedBeds)); // Both
+    - (severeCasesByRequestedTime + averageOccupiedBeds) * period); // Both
   impactData.hospitalBedsByRequestedTime = hospitalBedsByRequestedTime;
   severeImpactData.hospitalBedsByRequestedTime = hospitalBedsByRequestedTime;
 
-  const casesForICUByRequestedTime = Math.trunc((5 / 100) * infectionsByRequestedTime); // Both
+  const casesForICUByRequestedTime = Math.trunc((5 / 100) * infectionsByRequestedTime * period); // Both
   impactData.casesForICUByRequestedTime = casesForICUByRequestedTime;
   severeImpactData.casesForICUByRequestedTime = casesForICUByRequestedTime;
 
   const casesForVentilatorsByRequestedTime = Math.trunc((2 / 100)
-  * infectionsByRequestedTime); // Both
+  * infectionsByRequestedTime) * period; // Both
   impactData.casesForVentilatorsByRequestedTime = casesForVentilatorsByRequestedTime;
   severeImpactData.casesForVentilatorsByRequestedTime = casesForVentilatorsByRequestedTime;
 
-  const dollarsInFlight = Math.trunc((infectionsByRequestedTime
-    * avgDailyIncomePopulation * avgDailyIncomeInUSD) / period); // Both
+  const dollarsInFlight = Math.trunc(((infectionsByRequestedTime
+    * avgDailyIncomePopulation * avgDailyIncomeInUSD) / period) * period); // Both
   impactData.dollarsInFlight = dollarsInFlight;
   severeImpactData.dollarsInFlight = dollarsInFlight;
 

@@ -71,7 +71,7 @@ const covid19ImpactEstimator = (data) => {
     periodType, timeToElapse, reportedCases, population, totalHospitalBeds, region
   );
   return {
-    data: input, // the input data you got
+    data: input, // the input data you gotta
     impact: processData[0], // your best case estimation  {}
     severeImpact: processData[1] // your severe case estimation  {}
   };

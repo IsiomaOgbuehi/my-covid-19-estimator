@@ -34,7 +34,9 @@ const compute = (
   const severeCasesByRequestedTime = Math.trunc((15 / 100)
   * infectionsByRequestedTime * period); // Both
   impactData.severeCasesByRequestedTime = severeCasesByRequestedTime;
-  severeImpactData.severeCasesByRequestedTime = severeCasesByRequestedTime;
+  const severeCasesByRequestedTime2 = Math.trunc((15 / 100)
+  * severeInfectionsByRequestedTime * period);
+  severeImpactData.severeCasesByRequestedTime = severeCasesByRequestedTime2;
 
   const averageOccupiedBeds = (65 / 100) * totalHospitalBeds; // Mine calc
   const hospitalBedsByRequestedTime = Math.trunc(totalHospitalBeds
